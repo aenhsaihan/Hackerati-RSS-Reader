@@ -11,7 +11,7 @@
 @interface DataModel : NSObject
 
 @property (nonatomic, strong) NSDictionary *author;
-@property (nonatomic, strong) NSMutableDictionary *entries;
+@property (nonatomic, strong) NSMutableArray *entries;
 @property (nonatomic, strong) NSString *updated;
 @property (nonatomic, strong) NSString *rights;
 @property (nonatomic, strong) NSString *title;

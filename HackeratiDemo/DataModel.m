@@ -16,6 +16,8 @@
     
     if (self = [super init]) {
         
+        self.entries = [[NSMutableArray alloc] init];
+        
         [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             
             [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -25,7 +27,13 @@
                 } else if ([key isEqual: @"title"]) {
                     self.title = [obj objectForKey:@"label"];
                 } else if ([key isEqual: @"entry"]) {
-                    Entry *entry = [[Entry alloc] initWithArray:obj];
+                    
+                    [obj enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                        Entry *entry = [[Entry alloc] initWithDictionary:obj];
+                        
+                        [self.entries addObject:entry];
+                    }];
+                    
                 }
                 
 

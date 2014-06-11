@@ -23,6 +23,6 @@
 @property (nonatomic, strong) NSDictionary *category;
 @property (nonatomic, strong) NSDictionary *releaseDate;
 
--(id)initWithArray:(NSArray *)array;
+-(id)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
