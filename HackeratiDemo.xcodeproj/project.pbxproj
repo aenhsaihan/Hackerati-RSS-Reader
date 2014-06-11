@@ -22,6 +22,9 @@
 		486ADEEF1948C28400CF7317 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 486ADED31948C28400CF7317 /* CoreData.framework */; };
 		486ADEF71948C28400CF7317 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 486ADEF51948C28400CF7317 /* InfoPlist.strings */; };
 		486ADEF91948C28400CF7317 /* HackeratiDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADEF81948C28400CF7317 /* HackeratiDemoTests.m */; };
+		486ADF0E1948C7D100CF7317 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADF0C1948C7D100CF7317 /* TableViewController.m */; };
+		486ADF131948C87600CF7317 /* TableViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ADF111948C87600CF7317 /* TableViewController~iphone.xib */; };
+		486ADF181948C9FC00CF7317 /* TableViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ADF161948C9FC00CF7317 /* TableViewController~ipad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 		486ADEF41948C28400CF7317 /* HackeratiDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HackeratiDemoTests-Info.plist"; sourceTree = "<group>"; };
 		486ADEF61948C28400CF7317 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		486ADEF81948C28400CF7317 /* HackeratiDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackeratiDemoTests.m; sourceTree = "<group>"; };
+		486ADF0B1948C7D100CF7317 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		486ADF0C1948C7D100CF7317 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		486ADF111948C87600CF7317 /* TableViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TableViewController~iphone.xib"; sourceTree = "<group>"; };
+		486ADF161948C9FC00CF7317 /* TableViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TableViewController~ipad.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +125,10 @@
 				486ADEDE1948C28400CF7317 /* IODAppDelegate.h */,
 				486ADEDF1948C28400CF7317 /* IODAppDelegate.m */,
 				486ADEE41948C28400CF7317 /* Images.xcassets */,
+				486ADF0B1948C7D100CF7317 /* TableViewController.h */,
+				486ADF0C1948C7D100CF7317 /* TableViewController.m */,
+				486ADF111948C87600CF7317 /* TableViewController~iphone.xib */,
+				486ADF161948C9FC00CF7317 /* TableViewController~ipad.xib */,
 				486ADEE11948C28400CF7317 /* HackeratiDemo.xcdatamodeld */,
 				486ADED61948C28400CF7317 /* Supporting Files */,
 			);
@@ -231,6 +242,8 @@
 			files = (
 				486ADEDA1948C28400CF7317 /* InfoPlist.strings in Resources */,
 				486ADEE51948C28400CF7317 /* Images.xcassets in Resources */,
+				486ADF181948C9FC00CF7317 /* TableViewController~ipad.xib in Resources */,
+				486ADF131948C87600CF7317 /* TableViewController~iphone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +265,7 @@
 				486ADEDC1948C28400CF7317 /* main.m in Sources */,
 				486ADEE31948C28400CF7317 /* HackeratiDemo.xcdatamodeld in Sources */,
 				486ADEE01948C28400CF7317 /* IODAppDelegate.m in Sources */,
+				486ADF0E1948C7D100CF7317 /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +468,7 @@
 				486ADEFE1948C28400CF7317 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		486ADEFF1948C28400CF7317 /* Build configuration list for PBXNativeTarget "HackeratiDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +477,7 @@
 				486ADF011948C28400CF7317 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

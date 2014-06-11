@@ -7,6 +7,9 @@
 //
 
 #import "IODAppDelegate.h"
+#import "TableViewController.h"
+
+
 
 @implementation IODAppDelegate
 
@@ -14,10 +17,43 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    self.window.rootViewController = [[TableViewController alloc] initWithNibName:nil bundle:nil];
+    
+    NSLog(@"Still on the main thread: entering jsonParsingQueue");
+    
+    dispatch_queue_t jsonParsingQueue = dispatch_queue_create("jsonParsingQueue", NULL);
+    dispatch_async(jsonParsingQueue, ^{
+        
+        NSURL *url = [NSURL URLWithString:@"http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topgrossingapplications/sf=143441/limit=25/json"];
+        
+        NSData *jsonData = [NSData dataWithContentsOfURL:url];
+        
+        NSError *jsonError = nil;
+        
+        NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonError];
+        
+        if (!jsonError) {
+            NSLog(@"%@", jsonDictionary);
+        } else {
+            NSLog(@"JSON Error\n%@", ([jsonError localizedDescription] != nil) ? [jsonError localizedDescription] : @"Unknown Error");
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSLog(@"Using dispatch async to get back on main thread");
+        });
+        
+    });
+
+    NSLog(@"On main thread after dispatch code...");
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
