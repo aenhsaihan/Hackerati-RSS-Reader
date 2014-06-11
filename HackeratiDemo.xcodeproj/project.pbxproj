@@ -25,6 +25,8 @@
 		486ADF0E1948C7D100CF7317 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADF0C1948C7D100CF7317 /* TableViewController.m */; };
 		486ADF131948C87600CF7317 /* TableViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ADF111948C87600CF7317 /* TableViewController~iphone.xib */; };
 		486ADF181948C9FC00CF7317 /* TableViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ADF161948C9FC00CF7317 /* TableViewController~ipad.xib */; };
+		486ADF1B1948DAEF00CF7317 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADF1A1948DAEF00CF7317 /* DataModel.m */; };
+		486ADF1E1948DC7C00CF7317 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADF1D1948DC7C00CF7317 /* Entry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		486ADF0C1948C7D100CF7317 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		486ADF111948C87600CF7317 /* TableViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TableViewController~iphone.xib"; sourceTree = "<group>"; };
 		486ADF161948C9FC00CF7317 /* TableViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TableViewController~ipad.xib"; sourceTree = "<group>"; };
+		486ADF191948DAEF00CF7317 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		486ADF1A1948DAEF00CF7317 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		486ADF1C1948DC7C00CF7317 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		486ADF1D1948DC7C00CF7317 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,10 @@
 			children = (
 				486ADEDE1948C28400CF7317 /* IODAppDelegate.h */,
 				486ADEDF1948C28400CF7317 /* IODAppDelegate.m */,
+				486ADF191948DAEF00CF7317 /* DataModel.h */,
+				486ADF1A1948DAEF00CF7317 /* DataModel.m */,
+				486ADF1C1948DC7C00CF7317 /* Entry.h */,
+				486ADF1D1948DC7C00CF7317 /* Entry.m */,
 				486ADEE41948C28400CF7317 /* Images.xcassets */,
 				486ADF0B1948C7D100CF7317 /* TableViewController.h */,
 				486ADF0C1948C7D100CF7317 /* TableViewController.m */,
@@ -262,7 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				486ADF1E1948DC7C00CF7317 /* Entry.m in Sources */,
 				486ADEDC1948C28400CF7317 /* main.m in Sources */,
+				486ADF1B1948DAEF00CF7317 /* DataModel.m in Sources */,
 				486ADEE31948C28400CF7317 /* HackeratiDemo.xcdatamodeld in Sources */,
 				486ADEE01948C28400CF7317 /* IODAppDelegate.m in Sources */,
 				486ADF0E1948C7D100CF7317 /* TableViewController.m in Sources */,

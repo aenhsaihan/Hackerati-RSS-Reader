@@ -8,6 +8,7 @@
 
 #import "IODAppDelegate.h"
 #import "TableViewController.h"
+#import "DataModel.h"
 
 
 
@@ -40,7 +41,7 @@
         NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonError];
         
         if (!jsonError) {
-            NSLog(@"%@", jsonDictionary);
+            DataModel *dataModel = [[DataModel alloc] initWithDictionary:jsonDictionary];
         } else {
             NSLog(@"JSON Error\n%@", ([jsonError localizedDescription] != nil) ? [jsonError localizedDescription] : @"Unknown Error");
         }
