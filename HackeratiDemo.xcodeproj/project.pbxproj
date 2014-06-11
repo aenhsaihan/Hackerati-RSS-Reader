@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		486ADECE1948C28400CF7317 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 486ADECD1948C28400CF7317 /* Foundation.framework */; };
+		486ADED01948C28400CF7317 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 486ADECF1948C28400CF7317 /* CoreGraphics.framework */; };
+		486ADED21948C28400CF7317 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 486ADED11948C28400CF7317 /* UIKit.framework */; };
+		486ADED41948C28400CF7317 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 486ADED31948C28400CF7317 /* CoreData.framework */; };
+		486ADEDA1948C28400CF7317 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 486ADED81948C28400CF7317 /* InfoPlist.strings */; };
+		486ADEDC1948C28400CF7317 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADEDB1948C28400CF7317 /* main.m */; };
+		486ADEE01948C28400CF7317 /* IODAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADEDF1948C28400CF7317 /* IODAppDelegate.m */; };
+		486ADEE31948C28400CF7317 /* HackeratiDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 486ADEE11948C28400CF7317 /* HackeratiDemo.xcdatamodeld */; };
+		486ADEE51948C28400CF7317 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 486ADEE41948C28400CF7317 /* Images.xcassets */; };
+		486ADEEC1948C28400CF7317 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 486ADEEB1948C28400CF7317 /* XCTest.framework */; };
+		486ADEED1948C28400CF7317 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 486ADECD1948C28400CF7317 /* Foundation.framework */; };
+		486ADEEE1948C28400CF7317 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 486ADED11948C28400CF7317 /* UIKit.framework */; };
+		486ADEEF1948C28400CF7317 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 486ADED31948C28400CF7317 /* CoreData.framework */; };
+		486ADEF71948C28400CF7317 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 486ADEF51948C28400CF7317 /* InfoPlist.strings */; };
+		486ADEF91948C28400CF7317 /* HackeratiDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADEF81948C28400CF7317 /* HackeratiDemoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		486ADEF01948C28400CF7317 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 486ADEC21948C28400CF7317 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 486ADEC91948C28400CF7317;
+			remoteInfo = HackeratiDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		486ADECA1948C28400CF7317 /* HackeratiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackeratiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		486ADECD1948C28400CF7317 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		486ADECF1948C28400CF7317 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		486ADED11948C28400CF7317 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		486ADED31948C28400CF7317 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		486ADED71948C28400CF7317 /* HackeratiDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HackeratiDemo-Info.plist"; sourceTree = "<group>"; };
+		486ADED91948C28400CF7317 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		486ADEDB1948C28400CF7317 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		486ADEDD1948C28400CF7317 /* HackeratiDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HackeratiDemo-Prefix.pch"; sourceTree = "<group>"; };
+		486ADEDE1948C28400CF7317 /* IODAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IODAppDelegate.h; sourceTree = "<group>"; };
+		486ADEDF1948C28400CF7317 /* IODAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IODAppDelegate.m; sourceTree = "<group>"; };
+		486ADEE21948C28400CF7317 /* HackeratiDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackeratiDemo.xcdatamodel; sourceTree = "<group>"; };
+		486ADEE41948C28400CF7317 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		486ADEEA1948C28400CF7317 /* HackeratiDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackeratiDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		486ADEEB1948C28400CF7317 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		486ADEF41948C28400CF7317 /* HackeratiDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HackeratiDemoTests-Info.plist"; sourceTree = "<group>"; };
+		486ADEF61948C28400CF7317 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		486ADEF81948C28400CF7317 /* HackeratiDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackeratiDemoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		486ADEC71948C28400CF7317 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				486ADED01948C28400CF7317 /* CoreGraphics.framework in Frameworks */,
+				486ADED41948C28400CF7317 /* CoreData.framework in Frameworks */,
+				486ADED21948C28400CF7317 /* UIKit.framework in Frameworks */,
+				486ADECE1948C28400CF7317 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		486ADEE71948C28400CF7317 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				486ADEEC1948C28400CF7317 /* XCTest.framework in Frameworks */,
+				486ADEEF1948C28400CF7317 /* CoreData.framework in Frameworks */,
+				486ADEEE1948C28400CF7317 /* UIKit.framework in Frameworks */,
+				486ADEED1948C28400CF7317 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		486ADEC11948C28400CF7317 = {
+			isa = PBXGroup;
+			children = (
+				486ADED51948C28400CF7317 /* HackeratiDemo */,
+				486ADEF21948C28400CF7317 /* HackeratiDemoTests */,
+				486ADECC1948C28400CF7317 /* Frameworks */,
+				486ADECB1948C28400CF7317 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		486ADECB1948C28400CF7317 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				486ADECA1948C28400CF7317 /* HackeratiDemo.app */,
+				486ADEEA1948C28400CF7317 /* HackeratiDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		486ADECC1948C28400CF7317 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				486ADECD1948C28400CF7317 /* Foundation.framework */,
+				486ADECF1948C28400CF7317 /* CoreGraphics.framework */,
+				486ADED11948C28400CF7317 /* UIKit.framework */,
+				486ADED31948C28400CF7317 /* CoreData.framework */,
+				486ADEEB1948C28400CF7317 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		486ADED51948C28400CF7317 /* HackeratiDemo */ = {
+			isa = PBXGroup;
+			children = (
+				486ADEDE1948C28400CF7317 /* IODAppDelegate.h */,
+				486ADEDF1948C28400CF7317 /* IODAppDelegate.m */,
+				486ADEE41948C28400CF7317 /* Images.xcassets */,
+				486ADEE11948C28400CF7317 /* HackeratiDemo.xcdatamodeld */,
+				486ADED61948C28400CF7317 /* Supporting Files */,
+			);
+			path = HackeratiDemo;
+			sourceTree = "<group>";
+		};
+		486ADED61948C28400CF7317 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				486ADED71948C28400CF7317 /* HackeratiDemo-Info.plist */,
+				486ADED81948C28400CF7317 /* InfoPlist.strings */,
+				486ADEDB1948C28400CF7317 /* main.m */,
+				486ADEDD1948C28400CF7317 /* HackeratiDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		486ADEF21948C28400CF7317 /* HackeratiDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				486ADEF81948C28400CF7317 /* HackeratiDemoTests.m */,
+				486ADEF31948C28400CF7317 /* Supporting Files */,
+			);
+			path = HackeratiDemoTests;
+			sourceTree = "<group>";
+		};
+		486ADEF31948C28400CF7317 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				486ADEF41948C28400CF7317 /* HackeratiDemoTests-Info.plist */,
+				486ADEF51948C28400CF7317 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		486ADEC91948C28400CF7317 /* HackeratiDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 486ADEFC1948C28400CF7317 /* Build configuration list for PBXNativeTarget "HackeratiDemo" */;
+			buildPhases = (
+				486ADEC61948C28400CF7317 /* Sources */,
+				486ADEC71948C28400CF7317 /* Frameworks */,
+				486ADEC81948C28400CF7317 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HackeratiDemo;
+			productName = HackeratiDemo;
+			productReference = 486ADECA1948C28400CF7317 /* HackeratiDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		486ADEE91948C28400CF7317 /* HackeratiDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 486ADEFF1948C28400CF7317 /* Build configuration list for PBXNativeTarget "HackeratiDemoTests" */;
+			buildPhases = (
+				486ADEE61948C28400CF7317 /* Sources */,
+				486ADEE71948C28400CF7317 /* Frameworks */,
+				486ADEE81948C28400CF7317 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				486ADEF11948C28400CF7317 /* PBXTargetDependency */,
+			);
+			name = HackeratiDemoTests;
+			productName = HackeratiDemoTests;
+			productReference = 486ADEEA1948C28400CF7317 /* HackeratiDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		486ADEC21948C28400CF7317 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IOD;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = TurnToTech;
+				TargetAttributes = {
+					486ADEE91948C28400CF7317 = {
+						TestTargetID = 486ADEC91948C28400CF7317;
+					};
+				};
+			};
+			buildConfigurationList = 486ADEC51948C28400CF7317 /* Build configuration list for PBXProject "HackeratiDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 486ADEC11948C28400CF7317;
+			productRefGroup = 486ADECB1948C28400CF7317 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				486ADEC91948C28400CF7317 /* HackeratiDemo */,
+				486ADEE91948C28400CF7317 /* HackeratiDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		486ADEC81948C28400CF7317 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				486ADEDA1948C28400CF7317 /* InfoPlist.strings in Resources */,
+				486ADEE51948C28400CF7317 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		486ADEE81948C28400CF7317 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				486ADEF71948C28400CF7317 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		486ADEC61948C28400CF7317 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				486ADEDC1948C28400CF7317 /* main.m in Sources */,
+				486ADEE31948C28400CF7317 /* HackeratiDemo.xcdatamodeld in Sources */,
+				486ADEE01948C28400CF7317 /* IODAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		486ADEE61948C28400CF7317 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				486ADEF91948C28400CF7317 /* HackeratiDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		486ADEF11948C28400CF7317 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 486ADEC91948C28400CF7317 /* HackeratiDemo */;
+			targetProxy = 486ADEF01948C28400CF7317 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		486ADED81948C28400CF7317 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				486ADED91948C28400CF7317 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		486ADEF51948C28400CF7317 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				486ADEF61948C28400CF7317 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		486ADEFA1948C28400CF7317 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		486ADEFB1948C28400CF7317 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		486ADEFD1948C28400CF7317 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HackeratiDemo/HackeratiDemo-Prefix.pch";
+				INFOPLIST_FILE = "HackeratiDemo/HackeratiDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		486ADEFE1948C28400CF7317 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HackeratiDemo/HackeratiDemo-Prefix.pch";
+				INFOPLIST_FILE = "HackeratiDemo/HackeratiDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		486ADF001948C28400CF7317 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HackeratiDemo.app/HackeratiDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HackeratiDemo/HackeratiDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HackeratiDemoTests/HackeratiDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		486ADF011948C28400CF7317 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HackeratiDemo.app/HackeratiDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HackeratiDemo/HackeratiDemo-Prefix.pch";
+				INFOPLIST_FILE = "HackeratiDemoTests/HackeratiDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		486ADEC51948C28400CF7317 /* Build configuration list for PBXProject "HackeratiDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				486ADEFA1948C28400CF7317 /* Debug */,
+				486ADEFB1948C28400CF7317 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		486ADEFC1948C28400CF7317 /* Build configuration list for PBXNativeTarget "HackeratiDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				486ADEFD1948C28400CF7317 /* Debug */,
+				486ADEFE1948C28400CF7317 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		486ADEFF1948C28400CF7317 /* Build configuration list for PBXNativeTarget "HackeratiDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				486ADF001948C28400CF7317 /* Debug */,
+				486ADF011948C28400CF7317 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		486ADEE11948C28400CF7317 /* HackeratiDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				486ADEE21948C28400CF7317 /* HackeratiDemo.xcdatamodel */,
+			);
+			currentVersion = 486ADEE21948C28400CF7317 /* HackeratiDemo.xcdatamodel */;
+			path = HackeratiDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 486ADEC21948C28400CF7317 /* Project object */;
+}
