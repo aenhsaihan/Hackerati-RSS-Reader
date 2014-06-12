@@ -9,6 +9,7 @@
                 <outlet property="iphoneArtistButton" destination="hlg-zo-c2x" id="b5k-G3-90w"/>
                 <outlet property="iphoneCategoryLabel" destination="3b4-LB-Pse" id="d81-cF-wDm"/>
                 <outlet property="iphoneImageView" destination="qqU-jB-slh" id="2wN-nJ-mPd"/>
+                <outlet property="iphoneReleaseDateLabel" destination="x6C-6r-c8N" id="jC6-57-urf"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -38,15 +39,17 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6C-6r-c8N">
+                    <rect key="frame" x="120" y="128" width="180" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
-        <webView contentMode="scaleToFill" id="rLK-GK-ZFt">
-            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-        </webView>
     </objects>
 </document>

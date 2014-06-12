@@ -33,12 +33,16 @@
     
     NSString *category = [[self.entry.category objectForKey:@"attributes"] objectForKey:@"term"];
     
+    NSString *releaseDate = [[self.entry.releaseDate objectForKey:@"attributes"] objectForKey:@"label"];
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [self.ipadArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
         self.ipadCategoryLabel.text = category;
+        self.ipadReleaseDateLabel.text = releaseDate;
     } else {
         [self.iphoneArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
         self.iphoneCategoryLabel.text = category;
+        self.iphoneReleaseDateLabel.text = releaseDate;
     }
     
 }
