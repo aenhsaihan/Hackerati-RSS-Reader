@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Entry.h"
 
 @interface DetailViewController : UIViewController
+
+@property (nonatomic, strong) Entry *entry;
+
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *iphoneImageView;
+
+
+
 
 @end
