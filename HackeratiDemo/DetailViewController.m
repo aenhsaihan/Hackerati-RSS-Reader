@@ -31,12 +31,14 @@
     self.title = self.entry.name;
     [self setImage];
     
-    
+    NSString *category = [[self.entry.category objectForKey:@"attributes"] objectForKey:@"term"];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [self.ipadArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
+        self.ipadCategoryLabel.text = category;
     } else {
         [self.iphoneArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
+        self.iphoneCategoryLabel.text = category;
     }
     
 }

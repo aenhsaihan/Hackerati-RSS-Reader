@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
             <connections>
                 <outlet property="ipadArtistButton" destination="3dO-2t-98C" id="dvd-w6-cNA"/>
+                <outlet property="ipadCategoryLabel" destination="cwF-Cp-0PW" id="1yT-gC-XMf"/>
                 <outlet property="ipadImageView" destination="JAk-L7-2Na" id="w5P-cR-V9r"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
@@ -30,6 +31,13 @@
                         <action selector="viewArtistLink:" destination="-1" eventType="touchUpInside" id="fAj-Pa-J3j"/>
                     </connections>
                 </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwF-Cp-0PW">
+                    <rect key="frame" x="516" y="124" width="232" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
