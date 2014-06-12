@@ -56,6 +56,7 @@
             NSLog(@"Using dispatch async to get back on main thread");
             
             [tableViewController.tableView reloadData];
+            tableViewController.title = [[tableViewController.dataModel.author objectForKey:@"name"] objectForKey:@"label"];
         });
         
     });
