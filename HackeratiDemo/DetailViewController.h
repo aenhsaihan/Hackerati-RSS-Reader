@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *iphoneImageView;
 
 
+@property (weak, nonatomic) IBOutlet UIImageView *ipadImageView;
 
 
 @end

@@ -52,13 +52,26 @@
 
 -(void)setImage
 {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        // The device is an iPad running iOS 3.2 or later.
-
-    }
-    else {
-        // The device is an iPhone or iPod touch.
-        self.iphoneImageView.image = [self downloadImage];
-    }
+    
+    __block UIImage *image;
+    
+    dispatch_queue_t imageDownloadQueue = dispatch_queue_create("imageDownloadQueue", NULL);
+    dispatch_async(imageDownloadQueue, ^{
+        
+        image = [self downloadImage];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                // The device is an iPad running iOS 3.2 or later.
+                self.ipadImageView.image = image;
+            }
+            else {
+                // The device is an iPhone or iPod touch.
+                self.iphoneImageView.image = image;
+            }
+        });
+    });
+    
 }
 @end
