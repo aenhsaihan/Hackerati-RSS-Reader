@@ -7,7 +7,6 @@
 //
 
 #import "DetailViewController.h"
-#import "WebViewController.h"
 
 @interface DetailViewController ()
 
@@ -85,22 +84,8 @@
 }
 - (IBAction)viewArtistLink:(id)sender {
     
-    WebViewController *webViewController;
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[[self.entry.artist objectForKey:@"attributes"] objectForKey:@"href"]]];
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        // The device is an iPad running iOS 3.2 or later.
-        webViewController = [[WebViewController alloc] initWithNibName:@"WebViewController~ipad" bundle:nil];
-        [webViewController.ipadWebView loadRequest:request];
-    }
-    else {
-        // The device is an iPhone or iPod touch.
-        webViewController = [[WebViewController alloc] initWithNibName:@"WebViewController~iphone" bundle:nil];
-        [webViewController.iphoneWebView loadRequest:request];
-    }
-    
-    [self.navigationController pushViewController:webViewController animated:YES];
+    NSString *url = [[self.entry.artist objectForKey:@"attributes"] objectForKey:@"href"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     
 }
 @end
