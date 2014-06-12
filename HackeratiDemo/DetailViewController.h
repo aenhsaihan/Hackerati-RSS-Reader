@@ -16,9 +16,23 @@
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *iphoneImageView;
+@property (weak, nonatomic) IBOutlet UIButton *iphoneArtistButton;
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *ipadImageView;
+@property (weak, nonatomic) IBOutlet UIButton *ipadArtistButton;
+
+
+
+- (IBAction)viewArtistLink:(id)sender;
+
+
+
+
+
+
+
+
 
 
 @end

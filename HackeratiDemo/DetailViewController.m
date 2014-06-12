@@ -74,4 +74,6 @@
     });
     
 }
+- (IBAction)viewArtistLink:(id)sender {
+}
 @end
