@@ -27,6 +27,9 @@
 		486ADF181948C9FC00CF7317 /* TableViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ADF161948C9FC00CF7317 /* TableViewController~ipad.xib */; };
 		486ADF1B1948DAEF00CF7317 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADF1A1948DAEF00CF7317 /* DataModel.m */; };
 		486ADF1E1948DC7C00CF7317 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADF1D1948DC7C00CF7317 /* Entry.m */; };
+		486ADF22194A22AB00CF7317 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADF20194A22AB00CF7317 /* DetailViewController.m */; };
+		486ADF23194A22AB00CF7317 /* DetailViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ADF21194A22AB00CF7317 /* DetailViewController~ipad.xib */; };
+		486ADF28194A22F400CF7317 /* DetailViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ADF26194A22F400CF7317 /* DetailViewController~iphone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,10 @@
 		486ADF1A1948DAEF00CF7317 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		486ADF1C1948DC7C00CF7317 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
 		486ADF1D1948DC7C00CF7317 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		486ADF1F194A22AB00CF7317 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		486ADF20194A22AB00CF7317 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		486ADF21194A22AB00CF7317 /* DetailViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DetailViewController~ipad.xib"; sourceTree = "<group>"; };
+		486ADF26194A22F400CF7317 /* DetailViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DetailViewController~iphone.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +146,10 @@
 				486ADF0C1948C7D100CF7317 /* TableViewController.m */,
 				486ADF111948C87600CF7317 /* TableViewController~iphone.xib */,
 				486ADF161948C9FC00CF7317 /* TableViewController~ipad.xib */,
+				486ADF1F194A22AB00CF7317 /* DetailViewController.h */,
+				486ADF20194A22AB00CF7317 /* DetailViewController.m */,
+				486ADF26194A22F400CF7317 /* DetailViewController~iphone.xib */,
+				486ADF21194A22AB00CF7317 /* DetailViewController~ipad.xib */,
 				486ADEE11948C28400CF7317 /* HackeratiDemo.xcdatamodeld */,
 				486ADED61948C28400CF7317 /* Supporting Files */,
 			);
@@ -252,7 +263,9 @@
 			files = (
 				486ADEDA1948C28400CF7317 /* InfoPlist.strings in Resources */,
 				486ADEE51948C28400CF7317 /* Images.xcassets in Resources */,
+				486ADF23194A22AB00CF7317 /* DetailViewController~ipad.xib in Resources */,
 				486ADF181948C9FC00CF7317 /* TableViewController~ipad.xib in Resources */,
+				486ADF28194A22F400CF7317 /* DetailViewController~iphone.xib in Resources */,
 				486ADF131948C87600CF7317 /* TableViewController~iphone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +291,7 @@
 				486ADEE31948C28400CF7317 /* HackeratiDemo.xcdatamodeld in Sources */,
 				486ADEE01948C28400CF7317 /* IODAppDelegate.m in Sources */,
 				486ADF0E1948C7D100CF7317 /* TableViewController.m in Sources */,
+				486ADF22194A22AB00CF7317 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

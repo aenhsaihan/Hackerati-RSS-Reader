@@ -7,6 +7,8 @@
 //
 
 #import "TableViewController.h"
+#import "Entry.h"
+#import "DetailViewController.h"
 
 @interface TableViewController ()
 
@@ -47,13 +49,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return [self.dataModel.entries count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,8 +63,13 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
+    
+    Entry *entry = [self.dataModel.entries objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = entry.name;
+    cell.detailTextLabel.text = [entry.artist objectForKey:@"label"];
     
     // Configure the cell...
     
@@ -108,7 +115,7 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
@@ -116,14 +123,23 @@
 {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+    
+    DetailViewController *detailViewController;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        // The device is an iPad running iOS 3.2 or later.
+        detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController~ipad" bundle:nil];
+    }
+    else {
+        // The device is an iPhone or iPod touch.
+        detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController~iphone" bundle:nil];
+    }
 
     // Pass the selected object to the new view controller.
     
     // Push the view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
- 
- */
+
 
 @end

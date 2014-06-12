@@ -19,7 +19,7 @@
         [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             
             if ([key isEqual: @"im:name"]) {
-                self.name = obj;
+                self.name = [obj objectForKey:@"label"];
             } else if ([key isEqual: @"title"]) {
                 self.title = [obj objectForKey:@"label"];
             } else if ([key isEqual: @"im:image"]) {

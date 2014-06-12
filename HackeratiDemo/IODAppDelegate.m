@@ -25,7 +25,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    self.window.rootViewController = [[TableViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc] init];
+    TableViewController *tableViewController = [[TableViewController alloc] initWithNibName:nil bundle:nil];
+    [navigationController pushViewController:tableViewController animated:YES];
+    
+    self.window.rootViewController = navigationController;
+    
     
     NSLog(@"Still on the main thread: entering jsonParsingQueue");
     
@@ -41,7 +46,7 @@
         NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonError];
         
         if (!jsonError) {
-            DataModel *dataModel = [[DataModel alloc] initWithDictionary:jsonDictionary];
+           tableViewController.dataModel  = [[DataModel alloc] initWithDictionary:jsonDictionary];
         } else {
             NSLog(@"JSON Error\n%@", ([jsonError localizedDescription] != nil) ? [jsonError localizedDescription] : @"Unknown Error");
         }
@@ -49,6 +54,8 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             NSLog(@"Using dispatch async to get back on main thread");
+            
+            [tableViewController.tableView reloadData];
         });
         
     });

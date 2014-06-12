@@ -33,9 +33,17 @@
                         
                         [self.entries addObject:entry];
                     }];
-                    
+                } else if ([key isEqual: @"updated"]) {
+                    self.updated = [obj objectForKey:@"label"];
+                } else if ([key isEqual: @"rights"]) {
+                    self.rights = [obj objectForKey:@"label"];
+                } else if ([key isEqual: @"icon"]) {
+                    self.icon = [obj objectForKey:@"label"];
+                } else if ([key isEqual: @"link"]) {
+                    self.link = obj;
+                } else if ([key isEqual: @"id"]) {
+                    self.identification = [obj objectForKey:@"label"];
                 }
-                
 
             }];
             
