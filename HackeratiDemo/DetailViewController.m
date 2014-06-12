@@ -108,5 +108,7 @@
 }
 
 - (IBAction)purchaseApplication:(id)sender {
+    NSString *url = [[self.entry.link objectForKey:@"attributes"] objectForKey:@"href"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 @end
