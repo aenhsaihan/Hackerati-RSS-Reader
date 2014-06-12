@@ -30,6 +30,9 @@
 		486ADF22194A22AB00CF7317 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADF20194A22AB00CF7317 /* DetailViewController.m */; };
 		486ADF23194A22AB00CF7317 /* DetailViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ADF21194A22AB00CF7317 /* DetailViewController~ipad.xib */; };
 		486ADF28194A22F400CF7317 /* DetailViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ADF26194A22F400CF7317 /* DetailViewController~iphone.xib */; };
+		486ADF2C194A545400CF7317 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADF2A194A545400CF7317 /* WebViewController.m */; };
+		486ADF2D194A545400CF7317 /* WebViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ADF2B194A545400CF7317 /* WebViewController~ipad.xib */; };
+		486ADF32194A548700CF7317 /* WebViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ADF30194A548700CF7317 /* WebViewController~iphone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,10 @@
 		486ADF20194A22AB00CF7317 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		486ADF21194A22AB00CF7317 /* DetailViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DetailViewController~ipad.xib"; sourceTree = "<group>"; };
 		486ADF26194A22F400CF7317 /* DetailViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DetailViewController~iphone.xib"; sourceTree = "<group>"; };
+		486ADF29194A545400CF7317 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		486ADF2A194A545400CF7317 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		486ADF2B194A545400CF7317 /* WebViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "WebViewController~ipad.xib"; sourceTree = "<group>"; };
+		486ADF30194A548700CF7317 /* WebViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "WebViewController~iphone.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +157,10 @@
 				486ADF20194A22AB00CF7317 /* DetailViewController.m */,
 				486ADF26194A22F400CF7317 /* DetailViewController~iphone.xib */,
 				486ADF21194A22AB00CF7317 /* DetailViewController~ipad.xib */,
+				486ADF29194A545400CF7317 /* WebViewController.h */,
+				486ADF2A194A545400CF7317 /* WebViewController.m */,
+				486ADF2B194A545400CF7317 /* WebViewController~ipad.xib */,
+				486ADF30194A548700CF7317 /* WebViewController~iphone.xib */,
 				486ADEE11948C28400CF7317 /* HackeratiDemo.xcdatamodeld */,
 				486ADED61948C28400CF7317 /* Supporting Files */,
 			);
@@ -264,8 +275,10 @@
 				486ADEDA1948C28400CF7317 /* InfoPlist.strings in Resources */,
 				486ADEE51948C28400CF7317 /* Images.xcassets in Resources */,
 				486ADF23194A22AB00CF7317 /* DetailViewController~ipad.xib in Resources */,
+				486ADF2D194A545400CF7317 /* WebViewController~ipad.xib in Resources */,
 				486ADF181948C9FC00CF7317 /* TableViewController~ipad.xib in Resources */,
 				486ADF28194A22F400CF7317 /* DetailViewController~iphone.xib in Resources */,
+				486ADF32194A548700CF7317 /* WebViewController~iphone.xib in Resources */,
 				486ADF131948C87600CF7317 /* TableViewController~iphone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +301,7 @@
 				486ADF1E1948DC7C00CF7317 /* Entry.m in Sources */,
 				486ADEDC1948C28400CF7317 /* main.m in Sources */,
 				486ADF1B1948DAEF00CF7317 /* DataModel.m in Sources */,
+				486ADF2C194A545400CF7317 /* WebViewController.m in Sources */,
 				486ADEE31948C28400CF7317 /* HackeratiDemo.xcdatamodeld in Sources */,
 				486ADEE01948C28400CF7317 /* IODAppDelegate.m in Sources */,
 				486ADF0E1948C7D100CF7317 /* TableViewController.m in Sources */,

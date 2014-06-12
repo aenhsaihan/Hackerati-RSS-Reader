@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "WebViewController.h"
 
 @interface DetailViewController ()
 
@@ -30,6 +31,14 @@
     
     self.title = self.entry.name;
     [self setImage];
+    
+    
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self.ipadArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
+    } else {
+        [self.iphoneArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
+    }
     
 }
 
@@ -75,5 +84,23 @@
     
 }
 - (IBAction)viewArtistLink:(id)sender {
+    
+    WebViewController *webViewController;
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[[self.entry.artist objectForKey:@"attributes"] objectForKey:@"href"]]];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        // The device is an iPad running iOS 3.2 or later.
+        webViewController = [[WebViewController alloc] initWithNibName:@"WebViewController~ipad" bundle:nil];
+        [webViewController.ipadWebView loadRequest:request];
+    }
+    else {
+        // The device is an iPhone or iPod touch.
+        webViewController = [[WebViewController alloc] initWithNibName:@"WebViewController~iphone" bundle:nil];
+        [webViewController.iphoneWebView loadRequest:request];
+    }
+    
+    [self.navigationController pushViewController:webViewController animated:YES];
+    
 }
 @end
