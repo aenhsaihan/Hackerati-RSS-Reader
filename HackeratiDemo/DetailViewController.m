@@ -32,17 +32,29 @@
     [self setImage];
     
     NSString *category = [[self.entry.category objectForKey:@"attributes"] objectForKey:@"term"];
-    
     NSString *releaseDate = [[self.entry.releaseDate objectForKey:@"attributes"] objectForKey:@"label"];
+    NSString *price = [self.entry.price objectForKey:@"label"];
+    
+    if (![price isEqualToString:@"Free"]) {
+        
+        NSString *amount = [[self.entry.price objectForKey:@"attributes"] objectForKey:@"amount"];
+        float floatAmount = [amount floatValue];
+        NSString *amountWithTwoDecimals = [NSString stringWithFormat:@"%0.2f", floatAmount];
+        NSString *currency = [[self.entry.price objectForKey:@"attributes"] objectForKey:@"currency"];
+        
+        price = [NSString stringWithFormat:@"%@ %@", currency, amountWithTwoDecimals];
+    }
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [self.ipadArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
         self.ipadCategoryLabel.text = category;
         self.ipadReleaseDateLabel.text = releaseDate;
+        [self.ipadPriceButton setTitle:price forState:UIControlStateNormal];
     } else {
         [self.iphoneArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
         self.iphoneCategoryLabel.text = category;
         self.iphoneReleaseDateLabel.text = releaseDate;
+        [self.iphonePriceButton setTitle:price forState:UIControlStateNormal];
     }
     
 }
@@ -93,5 +105,8 @@
     NSString *url = [[self.entry.artist objectForKey:@"attributes"] objectForKey:@"href"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     
+}
+
+- (IBAction)purchaseApplication:(id)sender {
 }
 @end
