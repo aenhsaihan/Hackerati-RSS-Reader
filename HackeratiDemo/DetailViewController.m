@@ -50,11 +50,15 @@
         self.ipadCategoryLabel.text = category;
         self.ipadReleaseDateLabel.text = releaseDate;
         [self.ipadPriceButton setTitle:price forState:UIControlStateNormal];
+        self.ipadSummaryTextView.text = self.entry.summary;
+        self.ipadSummaryTextView.editable = NO;
     } else {
         [self.iphoneArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
         self.iphoneCategoryLabel.text = category;
         self.iphoneReleaseDateLabel.text = releaseDate;
         [self.iphonePriceButton setTitle:price forState:UIControlStateNormal];
+        self.iphoneSummaryTextView.text = self.entry.summary;
+        self.iphoneSummaryTextView.editable = NO;
     }
     
 }
