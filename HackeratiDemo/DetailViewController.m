@@ -31,9 +31,7 @@
     self.title = self.entry.name;
     [self setImage];
     
-    UIBarButtonItem *shareBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
-    //self.navigationController.navigationItem.rightBarButtonItem = shareBarButton;
-    
+    UIBarButtonItem *shareBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(displayActivityControllerWithDataObject)];
     self.navigationItem.rightBarButtonItem = shareBarButton;
     
     NSString *category = [[self.entry.category objectForKey:@"attributes"] objectForKey:@"term"];
@@ -120,5 +118,25 @@
     NSString *url = [[self.entry.link objectForKey:@"attributes"] objectForKey:@"href"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
+
+- (void)displayActivityControllerWithDataObject {
+    
+    NSString *url = [[self.entry.link objectForKey:@"attributes"] objectForKey:@"href"];
+    
+    UIActivityViewController* vc = [[UIActivityViewController alloc]
+                                    initWithActivityItems:@[url] applicationActivities:nil];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.popover = [[UIPopoverController alloc] initWithContentViewController:vc];
+        
+        [self.popover presentPopoverFromRect:CGRectMake(self.view.frame.size.width/2, self.view.frame.size.width/2, 100, 100) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    } else {
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+    
+    
+}
+
+
 
 @end

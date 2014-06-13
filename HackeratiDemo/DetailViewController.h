@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) Entry *entry;
 
-
+@property (nonatomic, strong) UIPopoverController *popover;
 
 @property (weak, nonatomic) IBOutlet UIImageView *iphoneImageView;
 @property (weak, nonatomic) IBOutlet UIButton *iphoneArtistButton;
