@@ -39,25 +39,41 @@
         
         NSURL *url = [NSURL URLWithString:@"http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topgrossingapplications/sf=143441/limit=25/json"];
         
-        NSData *jsonData = [NSData dataWithContentsOfURL:url];
+        NSError *connectionError;
         
-        NSError *jsonError = nil;
+        NSData *jsonData = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&connectionError];
         
-        NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonError];
-        
-        if (!jsonError) {
-           tableViewController.dataModel  = [[DataModel alloc] initWithDictionary:jsonDictionary];
+        if (!connectionError) {
+            
+            NSError *jsonError = nil;
+            
+            NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonError];
+            
+            if (!jsonError) {
+                tableViewController.dataModel  = [[DataModel alloc] initWithDictionary:jsonDictionary];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    NSLog(@"Using dispatch async to get back on main thread");
+                    
+                    [tableViewController.tableView reloadData];
+                    tableViewController.title = [[tableViewController.dataModel.author objectForKey:@"name"] objectForKey:@"label"];
+                });
+            } else {
+                NSLog(@"JSON Error\n%@", ([jsonError localizedDescription] != nil) ? [jsonError localizedDescription] : @"Unknown Error");
+            }
         } else {
-            NSLog(@"JSON Error\n%@", ([jsonError localizedDescription] != nil) ? [jsonError localizedDescription] : @"Unknown Error");
+            
+            NSLog(@"Error: %@", ([connectionError localizedDescription] != nil) ? [connectionError localizedDescription] : @"Unknown Error");
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"%@", [connectionError localizedDescription]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alert show];
+            });
+            
+            
         }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            NSLog(@"Using dispatch async to get back on main thread");
-            
-            [tableViewController.tableView reloadData];
-            tableViewController.title = [[tableViewController.dataModel.author objectForKey:@"name"] objectForKey:@"label"];
-        });
         
     });
 
