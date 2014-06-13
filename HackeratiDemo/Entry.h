@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Entry : NSObject <NSCoding>
+@interface Entry : NSObject
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSArray *images;

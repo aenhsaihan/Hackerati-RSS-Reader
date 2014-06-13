@@ -52,33 +52,4 @@
     return self;
 }
 
--(id)initWithCoder:(NSCoder *)aDecoder
-{
-    if(self = [super init]){
-        self.name = [aDecoder decodeObjectForKey:@"name"];
-        self.title = [aDecoder decodeObjectForKey:@"title"];
-        self.images = [aDecoder decodeObjectForKey:@"images"];
-        self.summary = [aDecoder decodeObjectForKey:@"summary"];
-        self.price = [aDecoder decodeObjectForKey:@"price"];
-        self.link = [aDecoder decodeObjectForKey:@"link"];
-        self.artist = [aDecoder decodeObjectForKey:@"artist"];
-        self.category = [aDecoder decodeObjectForKey:@"category"];
-        self.releaseDate = [aDecoder decodeObjectForKey:@"releaseDate"];
-    }
-    return self;
-}
-
--(void)encodeWithCoder:(NSCoder *)aCoder
-{
-    [aCoder encodeObject:self.name forKey:@"name"];
-    [aCoder encodeObject:self.title forKey:@"title"];
-    [aCoder encodeObject:self.images forKey:@"images"];
-    [aCoder encodeObject:self.summary forKey:@"summary"];
-    [aCoder encodeObject:self.price forKey:@"price"];
-    [aCoder encodeObject:self.link forKey:@"link"];
-    [aCoder encodeObject:self.artist forKey:@"artist"];
-    [aCoder encodeObject:self.category forKey:@"category"];
-    [aCoder encodeObject:self.releaseDate forKey:@"releaseDate"];
-}
-
 @end
