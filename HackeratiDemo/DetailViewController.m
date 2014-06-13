@@ -31,6 +31,11 @@
     self.title = self.entry.name;
     [self setImage];
     
+    UIBarButtonItem *shareBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
+    //self.navigationController.navigationItem.rightBarButtonItem = shareBarButton;
+    
+    self.navigationItem.rightBarButtonItem = shareBarButton;
+    
     NSString *category = [[self.entry.category objectForKey:@"attributes"] objectForKey:@"term"];
     NSString *releaseDate = [[self.entry.releaseDate objectForKey:@"attributes"] objectForKey:@"label"];
     NSString *price = [self.entry.price objectForKey:@"label"];
@@ -115,4 +120,5 @@
     NSString *url = [[self.entry.link objectForKey:@"attributes"] objectForKey:@"href"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
+
 @end
