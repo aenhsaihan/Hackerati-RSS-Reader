@@ -7,6 +7,8 @@
 //
 
 #import "DetailViewController.h"
+#import "EntryEntity.h"
+
 
 @interface DetailViewController ()
 
@@ -27,14 +29,19 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.appDelegate = [UIApplication sharedApplication].delegate;
     
     self.title = self.entry.name;
     [self setImage];
     
+    
     UIBarButtonItem *shareBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(displayActivityControllerWithDataObject)];
     UIBarButtonItem *favoritesBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(setAsFavorite)];
-    //self.navigationItem.rightBarButtonItem = shareBarButton;
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:favoritesBarButton, shareBarButton, nil]];
+    
+    if ([self checkFavoriteStatus]) {
+        favoritesBarButton.enabled = NO;
+    }
     
     NSString *category = [[self.entry.category objectForKey:@"attributes"] objectForKey:@"term"];
     NSString *releaseDate = [[self.entry.releaseDate objectForKey:@"attributes"] objectForKey:@"label"];
@@ -141,6 +148,68 @@
 
 -(void)setAsFavorite {
     
+    EntryEntity *entryEntity = [NSEntityDescription insertNewObjectForEntityForName:@"EntryEntity" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    entryEntity.entryObj = self.entry;
+    
+    NSError *error;
+    
+    if ([self.appDelegate.managedObjectContext save:&error]) {
+        
+        if (error) {
+            NSLog(@"%@", [error localizedDescription]);
+        } else {
+            
+            NSLog(@"Entry has been saved into Core Data as a favorite");
+            
+            self.favoritesBarButton.enabled = NO; //TODO: NOT WORKING!!!!
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App added!" message:@"App has been added to favorites" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+        }
+
+    }
+
+}
+
+-(BOOL)checkFavoriteStatus
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"EntryEntity" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (error) {
+        NSLog(@"Error: %@", [error localizedDescription]);
+        return NO;
+    }
+    
+    if (fetchedObjects == nil) {
+        NSLog(@"No objects have been found during the fetch request");
+        return NO;
+    }
+    
+    NSMutableArray *entries = [[NSMutableArray alloc] init];
+    
+    [fetchedObjects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        EntryEntity *entryEntity = obj;
+        Entry *entry = entryEntity.entryObj;
+        [entries addObject:[self extractIdentificationOfEntry:entry]];
+    }];
+    
+    
+    if ([entries containsObject:[self extractIdentificationOfEntry:self.entry]]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+-(NSString *)extractIdentificationOfEntry:(Entry *)entry
+{
+    NSString *identificationString = [[entry.identification objectForKey:@"attributes"] objectForKey:@"im:id"];
+    return identificationString;
 }
 
 @end

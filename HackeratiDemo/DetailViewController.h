@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "Entry.h"
+#import "IODAppDelegate.h"
 
 @interface DetailViewController : UIViewController
 
 @property (nonatomic, strong) Entry *entry;
 
 @property (nonatomic, strong) UIPopoverController *popover;
+
+@property (nonatomic, strong) IODAppDelegate *appDelegate;
+
+@property (nonatomic, strong) UIBarButtonItem *favoritesBarButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *iphoneImageView;
 @property (weak, nonatomic) IBOutlet UIButton *iphoneArtistButton;

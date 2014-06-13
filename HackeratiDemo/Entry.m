@@ -64,6 +64,9 @@
         self.artist = [aDecoder decodeObjectForKey:@"artist"];
         self.category = [aDecoder decodeObjectForKey:@"category"];
         self.releaseDate = [aDecoder decodeObjectForKey:@"releaseDate"];
+        self.contentType = [aDecoder decodeObjectForKey:@"contentType"];
+        self.rights = [aDecoder decodeObjectForKey:@"rights"];
+        self.identification = [aDecoder decodeObjectForKey:@"identification"];
     }
     return self;
 }
@@ -79,6 +82,9 @@
     [aCoder encodeObject:self.artist forKey:@"artist"];
     [aCoder encodeObject:self.category forKey:@"category"];
     [aCoder encodeObject:self.releaseDate forKey:@"releaseDate"];
+    [aCoder encodeObject:self.contentType forKey:@"contentType"];
+    [aCoder encodeObject:self.rights forKey:@"rights"];
+    [aCoder encodeObject:self.identification forKey:@"identification"];
 }
 
 @end
