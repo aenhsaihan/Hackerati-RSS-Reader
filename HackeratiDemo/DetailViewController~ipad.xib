@@ -24,7 +24,7 @@
                     <rect key="frame" x="20" y="86" width="100" height="100"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dO-2t-98C">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dO-2t-98C">
                     <rect key="frame" x="516" y="86" width="232" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Artist">
@@ -34,21 +34,21 @@
                         <action selector="viewArtistLink:" destination="-1" eventType="touchUpInside" id="fAj-Pa-J3j"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwF-Cp-0PW">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwF-Cp-0PW">
                     <rect key="frame" x="516" y="124" width="232" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhq-me-BQm">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Release Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhq-me-BQm">
                     <rect key="frame" x="516" y="153" width="232" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5f-lw-yhq">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5f-lw-yhq">
                     <rect key="frame" x="516" y="182" width="232" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Price">
@@ -58,7 +58,7 @@
                         <action selector="purchaseApplication:" destination="-1" eventType="touchUpInside" id="rXp-um-L1K"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8E-fu-WOa">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8E-fu-WOa">
                     <rect key="frame" x="20" y="226" width="728" height="696"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -68,6 +68,16 @@
                 </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="cwF-Cp-0PW" secondAttribute="trailing" constant="20" id="4nb-Ne-2ss"/>
+                <constraint firstItem="u8E-fu-WOa" firstAttribute="top" secondItem="X5f-lw-yhq" secondAttribute="bottom" constant="14" id="FWD-7S-E32"/>
+                <constraint firstAttribute="trailing" secondItem="u8E-fu-WOa" secondAttribute="trailing" constant="20" id="FZT-Ef-6xX"/>
+                <constraint firstAttribute="bottom" secondItem="u8E-fu-WOa" secondAttribute="bottom" constant="82" id="H2D-KK-W7C"/>
+                <constraint firstAttribute="trailing" secondItem="dhq-me-BQm" secondAttribute="trailing" constant="20" id="X0U-tT-wwP"/>
+                <constraint firstItem="u8E-fu-WOa" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" id="der-rn-GUp"/>
+                <constraint firstAttribute="trailing" secondItem="3dO-2t-98C" secondAttribute="trailing" constant="20" id="enh-vc-wbE"/>
+                <constraint firstAttribute="trailing" secondItem="X5f-lw-yhq" secondAttribute="trailing" constant="20" id="xgB-nV-slG"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
         </view>
     </objects>
