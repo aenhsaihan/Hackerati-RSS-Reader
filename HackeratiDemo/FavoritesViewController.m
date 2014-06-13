@@ -1,21 +1,18 @@
 //
-//  TableViewController.m
+//  FavoritesViewController.m
 //  HackeratiDemo
 //
-//  Created by Aditya Narayan on 6/11/14.
+//  Created by Aditya Narayan on 6/13/14.
 //  Copyright (c) 2014 TurnToTech. All rights reserved.
 //
 
-#import "TableViewController.h"
-#import "Entry.h"
-#import "DetailViewController.h"
 #import "FavoritesViewController.h"
 
-@interface TableViewController ()
+@interface FavoritesViewController ()
 
 @end
 
-@implementation TableViewController
+@implementation FavoritesViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -35,10 +32,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    UIBarButtonItem *favoritesBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(pushFavoritesViewController)];
-    self.navigationItem.rightBarButtonItem = favoritesBarButton;
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,14 +44,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.dataModel.entries count];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -66,13 +61,8 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    Entry *entry = [self.dataModel.entries objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = entry.name;
-    cell.detailTextLabel.text = [entry.artist objectForKey:@"label"];
     
     // Configure the cell...
     
@@ -118,7 +108,7 @@
 }
 */
 
-
+/*
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
@@ -126,40 +116,14 @@
 {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    
-    DetailViewController *detailViewController;
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        // The device is an iPad running iOS 3.2 or later.
-        detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController~ipad" bundle:nil];
-    }
-    else {
-        // The device is an iPhone or iPod touch.
-        detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController~iphone" bundle:nil];
-    }
+    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
 
     // Pass the selected object to the new view controller.
-    detailViewController.entry = [self.dataModel.entries objectAtIndex:indexPath.row];
     
     // Push the view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
-
--(void)pushFavoritesViewController
-{
-    FavoritesViewController *favoritesViewController;
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        // The device is an iPad running iOS 3.2 or later.
-        favoritesViewController = [[FavoritesViewController alloc] initWithNibName:@"FavoritesViewController~ipad" bundle:nil];
-    }
-    else {
-        // The device is an iPhone or iPod touch.
-        favoritesViewController = [[FavoritesViewController alloc] initWithNibName:@"FavoritesViewController~iphone" bundle:nil];
-    }
-    
-    [self.navigationController pushViewController:favoritesViewController animated:YES];
-}
-
+ 
+ */
 
 @end

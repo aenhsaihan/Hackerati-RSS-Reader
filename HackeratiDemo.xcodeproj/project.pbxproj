@@ -30,6 +30,9 @@
 		486ADF22194A22AB00CF7317 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 486ADF20194A22AB00CF7317 /* DetailViewController.m */; };
 		486ADF23194A22AB00CF7317 /* DetailViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ADF21194A22AB00CF7317 /* DetailViewController~ipad.xib */; };
 		486ADF28194A22F400CF7317 /* DetailViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 486ADF26194A22F400CF7317 /* DetailViewController~iphone.xib */; };
+		48D8CB75194B70CA006E91F0 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D8CB73194B70CA006E91F0 /* FavoritesViewController.m */; };
+		48D8CB76194B70CA006E91F0 /* FavoritesViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D8CB74194B70CA006E91F0 /* FavoritesViewController~iphone.xib */; };
+		48D8CB7B194B70E1006E91F0 /* FavoritesViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D8CB79194B70E1006E91F0 /* FavoritesViewController~ipad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,10 @@
 		486ADF20194A22AB00CF7317 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		486ADF21194A22AB00CF7317 /* DetailViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DetailViewController~ipad.xib"; sourceTree = "<group>"; };
 		486ADF26194A22F400CF7317 /* DetailViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "DetailViewController~iphone.xib"; sourceTree = "<group>"; };
+		48D8CB72194B70CA006E91F0 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		48D8CB73194B70CA006E91F0 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
+		48D8CB74194B70CA006E91F0 /* FavoritesViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "FavoritesViewController~iphone.xib"; sourceTree = "<group>"; };
+		48D8CB79194B70E1006E91F0 /* FavoritesViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "FavoritesViewController~ipad.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +157,10 @@
 				486ADF20194A22AB00CF7317 /* DetailViewController.m */,
 				486ADF26194A22F400CF7317 /* DetailViewController~iphone.xib */,
 				486ADF21194A22AB00CF7317 /* DetailViewController~ipad.xib */,
+				48D8CB72194B70CA006E91F0 /* FavoritesViewController.h */,
+				48D8CB73194B70CA006E91F0 /* FavoritesViewController.m */,
+				48D8CB74194B70CA006E91F0 /* FavoritesViewController~iphone.xib */,
+				48D8CB79194B70E1006E91F0 /* FavoritesViewController~ipad.xib */,
 				486ADEE11948C28400CF7317 /* HackeratiDemo.xcdatamodeld */,
 				486ADED61948C28400CF7317 /* Supporting Files */,
 			);
@@ -265,9 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				486ADEDA1948C28400CF7317 /* InfoPlist.strings in Resources */,
+				48D8CB7B194B70E1006E91F0 /* FavoritesViewController~ipad.xib in Resources */,
 				486ADEE51948C28400CF7317 /* Images.xcassets in Resources */,
 				486ADF23194A22AB00CF7317 /* DetailViewController~ipad.xib in Resources */,
 				486ADF181948C9FC00CF7317 /* TableViewController~ipad.xib in Resources */,
+				48D8CB76194B70CA006E91F0 /* FavoritesViewController~iphone.xib in Resources */,
 				486ADF28194A22F400CF7317 /* DetailViewController~iphone.xib in Resources */,
 				486ADF131948C87600CF7317 /* TableViewController~iphone.xib in Resources */,
 			);
@@ -294,6 +307,7 @@
 				486ADEE31948C28400CF7317 /* HackeratiDemo.xcdatamodeld in Sources */,
 				486ADEE01948C28400CF7317 /* IODAppDelegate.m in Sources */,
 				486ADF0E1948C7D100CF7317 /* TableViewController.m in Sources */,
+				48D8CB75194B70CA006E91F0 /* FavoritesViewController.m in Sources */,
 				486ADF22194A22AB00CF7317 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
