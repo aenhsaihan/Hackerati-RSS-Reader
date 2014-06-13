@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qqU-jB-slh">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qqU-jB-slh">
                     <rect key="frame" x="12" y="72" width="100" height="100"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -73,10 +73,12 @@
                 <constraint firstAttribute="trailing" secondItem="x6C-6r-c8N" secondAttribute="trailing" constant="20" id="GFV-98-RTk"/>
                 <constraint firstItem="UNM-Zg-Igl" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="12" id="HUZ-Ry-muj"/>
                 <constraint firstAttribute="bottom" secondItem="UNM-Zg-Igl" secondAttribute="bottom" constant="20" id="IUV-s4-f5A"/>
+                <constraint firstItem="hlg-zo-c2x" firstAttribute="leading" secondItem="qqU-jB-slh" secondAttribute="trailing" constant="8" id="Kn5-4e-Ywg"/>
                 <constraint firstItem="UNM-Zg-Igl" firstAttribute="top" secondItem="Qga-PQ-N3h" secondAttribute="bottom" constant="24" id="Qd1-Fl-tLO"/>
                 <constraint firstAttribute="trailing" secondItem="UNM-Zg-Igl" secondAttribute="trailing" constant="20" id="YH1-Pp-mtd"/>
+                <constraint firstItem="qqU-jB-slh" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="12" id="f3X-co-efp"/>
+                <constraint firstAttribute="trailing" secondItem="hlg-zo-c2x" secondAttribute="trailing" constant="20" id="nZB-4c-EdR"/>
                 <constraint firstAttribute="trailing" secondItem="Qga-PQ-N3h" secondAttribute="trailing" constant="20" id="pZt-bo-Vmv"/>
-                <constraint firstAttribute="trailing" secondItem="hlg-zo-c2x" secondAttribute="trailing" constant="20" id="xKx-mv-YyC"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

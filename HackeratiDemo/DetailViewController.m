@@ -32,7 +32,9 @@
     [self setImage];
     
     UIBarButtonItem *shareBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(displayActivityControllerWithDataObject)];
-    self.navigationItem.rightBarButtonItem = shareBarButton;
+    UIBarButtonItem *favoritesBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(setAsFavorite)];
+    //self.navigationItem.rightBarButtonItem = shareBarButton;
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:favoritesBarButton, shareBarButton, nil]];
     
     NSString *category = [[self.entry.category objectForKey:@"attributes"] objectForKey:@"term"];
     NSString *releaseDate = [[self.entry.releaseDate objectForKey:@"attributes"] objectForKey:@"label"];
@@ -137,6 +139,8 @@
     
 }
 
-
+-(void)setAsFavorite {
+    
+}
 
 @end
