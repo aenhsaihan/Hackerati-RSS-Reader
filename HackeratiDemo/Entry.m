@@ -78,6 +78,7 @@
         self.contentType = [aDecoder decodeObjectForKey:@"contentType"];
         self.rights = [aDecoder decodeObjectForKey:@"rights"];
         self.identification = [aDecoder decodeObjectForKey:@"identification"];
+        self.image = [aDecoder decodeObjectForKey:@"image"];
     }
     return self;
 }
@@ -96,6 +97,7 @@
     [aCoder encodeObject:self.contentType forKey:@"contentType"];
     [aCoder encodeObject:self.rights forKey:@"rights"];
     [aCoder encodeObject:self.identification forKey:@"identification"];
+    [aCoder encodeObject:self.image forKey:@"image"];
 }
 
 @end
