@@ -79,9 +79,9 @@
             }
         } else {
             
-            NSLog(@"Error: %@", ([connectionError localizedDescription] != nil) ? [connectionError localizedDescription] : @"Unknown Error");
-            
             dispatch_async(dispatch_get_main_queue(), ^{
+                
+                NSLog(@"Error: %@", ([connectionError localizedDescription] != nil) ? [connectionError localizedDescription] : @"Unknown Error");
                 
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"%@", [connectionError localizedDescription]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
                 [alert show];
