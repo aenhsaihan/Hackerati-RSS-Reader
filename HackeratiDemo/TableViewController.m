@@ -73,6 +73,23 @@
     
     cell.textLabel.text = entry.name;
     cell.detailTextLabel.text = [entry.artist objectForKey:@"label"];
+    cell.imageView.image = [self.images objectAtIndex:indexPath.row];
+    
+//    dispatch_queue_t imageDownloadQueue = dispatch_queue_create("imageDownloadQueue", NULL);
+//    dispatch_async(imageDownloadQueue, ^{
+//        
+//        NSURL *url = [NSURL URLWithString:[[entry.images objectAtIndex:2] objectForKey:@"label"]];
+//        NSData *imageData = [NSData dataWithContentsOfURL:url];
+//        UIImage *image = [UIImage imageWithData:imageData];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            
+//            cell.textLabel.text = entry.name;
+//            cell.detailTextLabel.text = [entry.artist objectForKey:@"label"];
+//            cell.imageView.image = image;
+//            
+//        });
+//    });
     
     // Configure the cell...
     

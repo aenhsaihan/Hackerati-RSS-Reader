@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) DataModel *dataModel;
 
+@property (nonatomic, strong) NSMutableArray *images;
+
 @end

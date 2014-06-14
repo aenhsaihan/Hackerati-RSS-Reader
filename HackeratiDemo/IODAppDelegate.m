@@ -9,6 +9,7 @@
 #import "IODAppDelegate.h"
 #import "TableViewController.h"
 #import "DataModel.h"
+#import "Entry.h"
 
 
 
@@ -51,6 +52,19 @@
             
             if (!jsonError) {
                 tableViewController.dataModel  = [[DataModel alloc] initWithDictionary:jsonDictionary];
+                tableViewController.images = [[NSMutableArray alloc] init];
+                
+                //download pictures ahead of time...
+                [tableViewController.dataModel.entries enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    
+                    Entry *entry = obj;
+                    
+                    NSURL *url = [NSURL URLWithString:[[entry.images objectAtIndex:2] objectForKey:@"label"]];
+                    NSData *imageData = [NSData dataWithContentsOfURL:url];
+                    UIImage *image = [UIImage imageWithData:imageData];
+                    
+                    [tableViewController.images addObject:image];
+                }];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
@@ -58,6 +72,7 @@
                     
                     [tableViewController.tableView reloadData];
                     tableViewController.title = [[tableViewController.dataModel.author objectForKey:@"name"] objectForKey:@"label"];
+                    
                 });
             } else {
                 NSLog(@"JSON Error\n%@", ([jsonError localizedDescription] != nil) ? [jsonError localizedDescription] : @"Unknown Error");
