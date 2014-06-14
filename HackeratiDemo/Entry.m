@@ -11,10 +11,11 @@
 @implementation Entry
 
 
--(id)initWithDictionary:(NSDictionary *)dictionary
+-(id)initWithDictionary:(NSDictionary *)dictionary withCompletionHandler:(void (^)(void))handler
 {
     if (self = [super init]) {
         
+        self.completionHandler = handler;
 
         [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             
@@ -56,6 +57,7 @@
             UIImage *image = [UIImage imageWithData:imageData];
             self.image = image;
             
+            self.completionHandler();
         });
         
     }

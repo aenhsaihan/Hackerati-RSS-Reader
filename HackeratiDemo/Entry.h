@@ -24,6 +24,8 @@
 @property (nonatomic, strong) NSDictionary *releaseDate;
 @property (nonatomic, strong) UIImage *image;
 
--(id)initWithDictionary:(NSDictionary *)dictionary;
+@property (nonatomic, strong) void(^completionHandler)(void);
+
+-(id)initWithDictionary:(NSDictionary *)dictionary withCompletionHandler:(void(^)(void))handler;
 
 @end

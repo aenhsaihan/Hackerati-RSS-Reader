@@ -19,6 +19,6 @@
 @property (nonatomic, strong) NSArray *link;
 @property (nonatomic, strong) NSString *identification;
 
--(id)initWithDictionary:(NSDictionary *)dictionary;
+-(id)initWithDictionary:(NSDictionary *)dictionary withCompletionHandler:(void(^)(void))handler;
 
 @end

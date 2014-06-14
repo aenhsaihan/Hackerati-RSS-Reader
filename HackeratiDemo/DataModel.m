@@ -11,7 +11,7 @@
 
 @implementation DataModel
 
--(id)initWithDictionary:(NSDictionary *)dictionary
+-(id)initWithDictionary:(NSDictionary *)dictionary withCompletionHandler:(void (^)(void))handler;
 {
     
     if (self = [super init]) {
@@ -29,7 +29,7 @@
                 } else if ([key isEqual: @"entry"]) {
                     
                     [obj enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                        Entry *entry = [[Entry alloc] initWithDictionary:obj];
+                        Entry *entry = [[Entry alloc] initWithDictionary:obj withCompletionHandler:handler];
                         
                         [self.entries addObject:entry];
                     }];

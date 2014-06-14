@@ -51,7 +51,9 @@
             NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonError];
             
             if (!jsonError) {
-                tableViewController.dataModel  = [[DataModel alloc] initWithDictionary:jsonDictionary];
+                tableViewController.dataModel  = [[DataModel alloc] initWithDictionary:jsonDictionary withCompletionHandler:^{
+                    [tableViewController.tableView reloadData];
+                }];
 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
