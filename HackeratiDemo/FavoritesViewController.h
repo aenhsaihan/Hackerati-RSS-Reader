@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FavoritesViewController : UITableViewController
+@interface FavoritesViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end

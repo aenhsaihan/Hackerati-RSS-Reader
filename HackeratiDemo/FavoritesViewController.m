@@ -7,6 +7,9 @@
 //
 
 #import "FavoritesViewController.h"
+#import "IODAppDelegate.h"
+#import "EntryEntity.h"
+#import "Entry.h"
 
 @interface FavoritesViewController ()
 
@@ -34,6 +37,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.title = @"Favorites";
+    
+    [self performFetch];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,16 +51,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.fetchedResultsController.fetchedObjects count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,6 +70,11 @@
     }
     
     // Configure the cell...
+    
+    EntryEntity *entryEntity = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
+    Entry *entry = entryEntity.entryObj;
+    
+    cell.textLabel.text = entry.name;
     
     return cell;
 }
@@ -127,5 +135,35 @@
 }
  
  */
+
+-(void)performFetch
+{
+    IODAppDelegate *appDelegate = [[IODAppDelegate alloc] init];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Configure the request's entity, and optionally its predicate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"EntryEntity" inManagedObjectContext:appDelegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"entryObj" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:appDelegate.managedObjectContext sectionNameKeyPath:nil  cacheName:nil];
+    self.fetchedResultsController.delegate = self;
+    
+    
+    NSError *error;
+	if (![[self fetchedResultsController] performFetch:&error]) {
+		// Update to handle the error appropriately.
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);  // Fail
+	}
+    
+    [self.tableView reloadData];
+}
+
+
+#pragma - NSFetchedResultsController methods
 
 @end
