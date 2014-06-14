@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IODAppDelegate.h"
 
 @interface FavoritesViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) IODAppDelegate *appDelegate;
 
 @end
