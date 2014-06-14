@@ -75,6 +75,11 @@
     cell.detailTextLabel.text = [entry.artist objectForKey:@"label"];
     cell.imageView.image = entry.image;
 
+    if (entry.image) {
+        cell.imageView.image = entry.image;
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"Placeholder.png"];
+    }
     
     // Configure the cell...
     

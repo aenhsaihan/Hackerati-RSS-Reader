@@ -33,8 +33,6 @@
     
     self.title = self.entry.name;
     
-    //[self setImage]; TODO:Mark for deletion
-    
     
     UIBarButtonItem *shareBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(displayActivityControllerWithDataObject)];
     self.favoritesBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(setAsFavorite)];
@@ -83,53 +81,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//TODO:Mark for deletion
-//-(UIImage *)downloadImage
-//{
-//    NSURL *url = [NSURL URLWithString:[[self.entry.images objectAtIndex:2] objectForKey:@"label"]];
-//    
-//    NSData *imageData = [NSData dataWithContentsOfURL:url];
-//    
-//    UIImage *image = [UIImage imageWithData:imageData];
-//    
-//    return image;
-//}
-//
-//-(void)setImage
-//{
-//    
-//    __block UIImage *image;
-//    
-//    dispatch_queue_t imageDownloadQueue = dispatch_queue_create("imageDownloadQueue", NULL);
-//    dispatch_async(imageDownloadQueue, ^{
-//        
-//        image = [self downloadImage];
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            
-//            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-//                // The device is an iPad running iOS 3.2 or later.
-//                
-//                if (!image) {
-//                    self.ipadImageView.image = [UIImage imageNamed:@"noimage.png"];
-//                } else {
-//                    self.ipadImageView.image = image;
-//                }
-//            }
-//            else {
-//                // The device is an iPhone or iPod touch.
-//                
-//                if (!image) {
-//                    self.iphoneImageView.image = [UIImage imageNamed:@"noimage.png"];
-//                } else {
-//                    self.iphoneImageView.image = image;
-//                }
-//            }
-//        });
-//    });
-//    
-//}
 
 - (IBAction)viewArtistLink:(id)sender {
     
