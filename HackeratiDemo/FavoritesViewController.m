@@ -66,7 +66,7 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
@@ -75,6 +75,7 @@
     Entry *entry = entryEntity.entryObj;
     
     cell.textLabel.text = entry.name;
+    cell.detailTextLabel.text = [entry.artist objectForKey:@"label"];
     
     return cell;
 }
@@ -153,14 +154,21 @@
     self.fetchedResultsController.delegate = self;
     
     
-    NSError *error;
-	if (![[self fetchedResultsController] performFetch:&error]) {
-		// Update to handle the error appropriately.
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		exit(-1);  // Fail
-	}
-    
-    [self.tableView reloadData];
+    dispatch_queue_t fetchResultsControllerQueue = dispatch_queue_create("fetchResultsControllerQueue", NULL);
+    dispatch_async(fetchResultsControllerQueue, ^{
+        
+        NSError *error;
+        if (![[self fetchedResultsController] performFetch:&error]) {
+            // Update to handle the error appropriately.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            exit(-1);  // Fail
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.tableView reloadData];
+        });
+    });
 }
 
 
