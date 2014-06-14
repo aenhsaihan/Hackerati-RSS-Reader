@@ -33,7 +33,6 @@
     
     self.title = self.entry.name;
     
-    
     UIBarButtonItem *shareBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(displayActivityControllerWithDataObject)];
     self.favoritesBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(setAsFavorite)];
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:self.favoritesBarButton, shareBarButton, nil]];
@@ -42,25 +41,15 @@
         self.favoritesBarButton.enabled = NO;
     }
     
+    
     NSString *category = [[self.entry.category objectForKey:@"attributes"] objectForKey:@"term"];
     NSString *releaseDate = [[self.entry.releaseDate objectForKey:@"attributes"] objectForKey:@"label"];
-    NSString *price = [self.entry.price objectForKey:@"label"];
-    
-    if (![price isEqualToString:@"Free"]) {
-        
-        NSString *amount = [[self.entry.price objectForKey:@"attributes"] objectForKey:@"amount"];
-        float floatAmount = [amount floatValue];
-        NSString *amountWithTwoDecimals = [NSString stringWithFormat:@"%0.2f", floatAmount];
-        NSString *currency = [[self.entry.price objectForKey:@"attributes"] objectForKey:@"currency"];
-        
-        price = [NSString stringWithFormat:@"%@ %@", currency, amountWithTwoDecimals];
-    }
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [self.ipadArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
         self.ipadCategoryLabel.text = category;
         self.ipadReleaseDateLabel.text = releaseDate;
-        [self.ipadPriceButton setTitle:price forState:UIControlStateNormal];
+        [self.ipadPriceButton setTitle:[self extractPrice] forState:UIControlStateNormal];
         self.ipadSummaryTextView.text = self.entry.summary;
         self.ipadSummaryTextView.editable = NO;
         self.ipadImageView.image = self.entry.image;
@@ -68,7 +57,7 @@
         [self.iphoneArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
         self.iphoneCategoryLabel.text = category;
         self.iphoneReleaseDateLabel.text = releaseDate;
-        [self.iphonePriceButton setTitle:price forState:UIControlStateNormal];
+        [self.iphonePriceButton setTitle:[self extractPrice] forState:UIControlStateNormal];
         self.iphoneSummaryTextView.text = self.entry.summary;
         self.iphoneSummaryTextView.editable = NO;
         self.iphoneImageView.image = self.entry.image;
@@ -176,6 +165,23 @@
 {
     NSString *identificationString = [[entry.identification objectForKey:@"attributes"] objectForKey:@"im:id"];
     return identificationString;
+}
+
+-(NSString *)extractPrice
+{
+    NSString *price = [self.entry.price objectForKey:@"label"];
+    
+    if (![price isEqualToString:@"Free"]) {
+        
+        NSString *amount = [[self.entry.price objectForKey:@"attributes"] objectForKey:@"amount"];
+        float floatAmount = [amount floatValue];
+        NSString *amountWithTwoDecimals = [NSString stringWithFormat:@"%0.2f", floatAmount];
+        NSString *currency = [[self.entry.price objectForKey:@"attributes"] objectForKey:@"currency"];
+        
+        price = [NSString stringWithFormat:@"%@ %@", currency, amountWithTwoDecimals];
+    }
+    
+    return price;
 }
 
 @end

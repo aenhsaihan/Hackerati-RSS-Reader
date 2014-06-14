@@ -73,8 +73,7 @@
     
     cell.textLabel.text = entry.name;
     cell.detailTextLabel.text = [entry.artist objectForKey:@"label"];
-    cell.imageView.image = entry.image;
-
+    
     if (entry.image) {
         cell.imageView.image = entry.image;
     } else {
