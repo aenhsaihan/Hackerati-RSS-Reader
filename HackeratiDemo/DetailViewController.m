@@ -33,7 +33,7 @@
     
     self.title = self.entry.name;
     
-    [self setImage];
+    //[self setImage]; TODO:Mark for deletion
     
     
     UIBarButtonItem *shareBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(displayActivityControllerWithDataObject)];
@@ -65,6 +65,7 @@
         [self.ipadPriceButton setTitle:price forState:UIControlStateNormal];
         self.ipadSummaryTextView.text = self.entry.summary;
         self.ipadSummaryTextView.editable = NO;
+        self.ipadImageView.image = self.entry.image;
     } else {
         [self.iphoneArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
         self.iphoneCategoryLabel.text = category;
@@ -72,6 +73,7 @@
         [self.iphonePriceButton setTitle:price forState:UIControlStateNormal];
         self.iphoneSummaryTextView.text = self.entry.summary;
         self.iphoneSummaryTextView.editable = NO;
+        self.iphoneImageView.image = self.entry.image;
     }
     
 }
@@ -82,51 +84,53 @@
     // Dispose of any resources that can be recreated.
 }
 
--(UIImage *)downloadImage
-{
-    NSURL *url = [NSURL URLWithString:[[self.entry.images objectAtIndex:2] objectForKey:@"label"]];
-    
-    NSData *imageData = [NSData dataWithContentsOfURL:url];
-    
-    UIImage *image = [UIImage imageWithData:imageData];
-    
-    return image;
-}
+//TODO:Mark for deletion
+//-(UIImage *)downloadImage
+//{
+//    NSURL *url = [NSURL URLWithString:[[self.entry.images objectAtIndex:2] objectForKey:@"label"]];
+//    
+//    NSData *imageData = [NSData dataWithContentsOfURL:url];
+//    
+//    UIImage *image = [UIImage imageWithData:imageData];
+//    
+//    return image;
+//}
+//
+//-(void)setImage
+//{
+//    
+//    __block UIImage *image;
+//    
+//    dispatch_queue_t imageDownloadQueue = dispatch_queue_create("imageDownloadQueue", NULL);
+//    dispatch_async(imageDownloadQueue, ^{
+//        
+//        image = [self downloadImage];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            
+//            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+//                // The device is an iPad running iOS 3.2 or later.
+//                
+//                if (!image) {
+//                    self.ipadImageView.image = [UIImage imageNamed:@"noimage.png"];
+//                } else {
+//                    self.ipadImageView.image = image;
+//                }
+//            }
+//            else {
+//                // The device is an iPhone or iPod touch.
+//                
+//                if (!image) {
+//                    self.iphoneImageView.image = [UIImage imageNamed:@"noimage.png"];
+//                } else {
+//                    self.iphoneImageView.image = image;
+//                }
+//            }
+//        });
+//    });
+//    
+//}
 
--(void)setImage
-{
-    
-    __block UIImage *image;
-    
-    dispatch_queue_t imageDownloadQueue = dispatch_queue_create("imageDownloadQueue", NULL);
-    dispatch_async(imageDownloadQueue, ^{
-        
-        image = [self downloadImage];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-                // The device is an iPad running iOS 3.2 or later.
-                
-                if (!image) {
-                    self.ipadImageView.image = [UIImage imageNamed:@"noimage.png"];
-                } else {
-                    self.ipadImageView.image = image;
-                }
-            }
-            else {
-                // The device is an iPhone or iPod touch.
-                
-                if (!image) {
-                    self.iphoneImageView.image = [UIImage imageNamed:@"noimage.png"];
-                } else {
-                    self.iphoneImageView.image = image;
-                }
-            }
-        });
-    });
-    
-}
 - (IBAction)viewArtistLink:(id)sender {
     
     NSString *url = [[self.entry.artist objectForKey:@"attributes"] objectForKey:@"href"];
