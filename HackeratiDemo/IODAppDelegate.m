@@ -52,7 +52,9 @@
             
             if (!jsonError) {
                 tableViewController.dataModel  = [[DataModel alloc] initWithDictionary:jsonDictionary withCompletionHandler:^{
-                    [tableViewController.tableView reloadData];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [tableViewController.tableView reloadData];
+                    });
                 }];
 
                 dispatch_async(dispatch_get_main_queue(), ^{
