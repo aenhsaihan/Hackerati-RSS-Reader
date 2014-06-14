@@ -73,7 +73,8 @@
     
     cell.textLabel.text = entry.name;
     cell.detailTextLabel.text = [entry.artist objectForKey:@"label"];
-    cell.imageView.image = [self.images objectAtIndex:indexPath.row];
+    //cell.imageView.image = [self.images objectAtIndex:indexPath.row];
+    cell.imageView.image = entry.image;
     
 //    dispatch_queue_t imageDownloadQueue = dispatch_queue_create("imageDownloadQueue", NULL);
 //    dispatch_async(imageDownloadQueue, ^{

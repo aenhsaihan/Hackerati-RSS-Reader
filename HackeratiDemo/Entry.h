@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSDictionary *artist;
 @property (nonatomic, strong) NSDictionary *category;
 @property (nonatomic, strong) NSDictionary *releaseDate;
+@property (nonatomic, strong) UIImage *image;
 
 -(id)initWithDictionary:(NSDictionary *)dictionary;
 

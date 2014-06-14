@@ -47,6 +47,17 @@
         }];
 
         
+        
+        dispatch_queue_t imageDownloadQueue = dispatch_queue_create("imageDownloadQueue", NULL);
+        dispatch_async(imageDownloadQueue, ^{
+            
+            NSURL *url = [NSURL URLWithString:[[self.images objectAtIndex:2] objectForKey:@"label"]];
+            NSData *imageData = [NSData dataWithContentsOfURL:url];
+            UIImage *image = [UIImage imageWithData:imageData];
+            self.image = image;
+            
+        });
+        
     }
     
     return self;
