@@ -34,6 +34,7 @@
 		48D8CB76194B70CA006E91F0 /* FavoritesViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D8CB74194B70CA006E91F0 /* FavoritesViewController~iphone.xib */; };
 		48D8CB7B194B70E1006E91F0 /* FavoritesViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D8CB79194B70E1006E91F0 /* FavoritesViewController~ipad.xib */; };
 		48D8CB7E194B8D17006E91F0 /* EntryEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D8CB7D194B8D17006E91F0 /* EntryEntity.m */; };
+		48D8CB81194BEB3B006E91F0 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D8CB80194BEB3B006E91F0 /* noimage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		48D8CB79194B70E1006E91F0 /* FavoritesViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "FavoritesViewController~ipad.xib"; sourceTree = "<group>"; };
 		48D8CB7C194B8D17006E91F0 /* EntryEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryEntity.h; sourceTree = "<group>"; };
 		48D8CB7D194B8D17006E91F0 /* EntryEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryEntity.m; sourceTree = "<group>"; };
+		48D8CB80194BEB3B006E91F0 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noimage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				48D8CB7C194B8D17006E91F0 /* EntryEntity.h */,
 				48D8CB7D194B8D17006E91F0 /* EntryEntity.m */,
 				486ADED61948C28400CF7317 /* Supporting Files */,
+				48D8CB7F194BEB25006E91F0 /* Images */,
 			);
 			path = HackeratiDemo;
 			sourceTree = "<group>";
@@ -199,6 +202,14 @@
 				486ADEF51948C28400CF7317 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		48D8CB7F194BEB25006E91F0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				48D8CB80194BEB3B006E91F0 /* noimage.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +296,7 @@
 				486ADEE51948C28400CF7317 /* Images.xcassets in Resources */,
 				486ADF23194A22AB00CF7317 /* DetailViewController~ipad.xib in Resources */,
 				486ADF181948C9FC00CF7317 /* TableViewController~ipad.xib in Resources */,
+				48D8CB81194BEB3B006E91F0 /* noimage.png in Resources */,
 				48D8CB76194B70CA006E91F0 /* FavoritesViewController~iphone.xib in Resources */,
 				486ADF28194A22F400CF7317 /* DetailViewController~iphone.xib in Resources */,
 				486ADF131948C87600CF7317 /* TableViewController~iphone.xib in Resources */,

@@ -32,6 +32,7 @@
     self.appDelegate = [UIApplication sharedApplication].delegate;
     
     self.title = self.entry.name;
+    
     [self setImage];
     
     
@@ -106,11 +107,21 @@
             
             if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
                 // The device is an iPad running iOS 3.2 or later.
-                self.ipadImageView.image = image;
+                
+                if (!image) {
+                    self.ipadImageView.image = [UIImage imageNamed:@"noimage.png"];
+                } else {
+                    self.ipadImageView.image = image;
+                }
             }
             else {
                 // The device is an iPhone or iPod touch.
-                self.iphoneImageView.image = image;
+                
+                if (!image) {
+                    self.iphoneImageView.image = [UIImage imageNamed:@"noimage.png"];
+                } else {
+                    self.iphoneImageView.image = image;
+                }
             }
         });
     });
