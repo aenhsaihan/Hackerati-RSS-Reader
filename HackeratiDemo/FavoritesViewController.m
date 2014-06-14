@@ -10,6 +10,7 @@
 #import "IODAppDelegate.h"
 #import "EntryEntity.h"
 #import "Entry.h"
+#import "DetailViewController.h"
 
 @interface FavoritesViewController ()
 
@@ -131,7 +132,7 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
@@ -139,15 +140,26 @@
 {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-
+    DetailViewController *detailViewController;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        // The device is an iPad running iOS 3.2 or later.
+        detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController~ipad" bundle:nil];
+    }
+    else {
+        // The device is an iPhone or iPod touch.
+        detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController~iphone" bundle:nil];
+    }
+    
     // Pass the selected object to the new view controller.
+    EntryEntity *entryEntity = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
+    detailViewController.entry = entryEntity.entryObj;
     
     // Push the view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
  
- */
+
 
 -(void)performFetch
 {
