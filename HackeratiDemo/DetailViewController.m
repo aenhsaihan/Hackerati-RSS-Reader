@@ -41,6 +41,7 @@
         self.favoritesBarButton.enabled = NO;
     }
     
+    [self loadAppImage];
     
     NSString *category = [[self.entry.category objectForKey:@"attributes"] objectForKey:@"term"];
     NSString *releaseDate = [[self.entry.releaseDate objectForKey:@"attributes"] objectForKey:@"label"];
@@ -52,7 +53,7 @@
         [self.ipadPriceButton setTitle:[self extractPrice] forState:UIControlStateNormal];
         self.ipadSummaryTextView.text = self.entry.summary;
         self.ipadSummaryTextView.editable = NO;
-        self.ipadImageView.image = self.entry.image;
+        //self.ipadImageView.image = self.entry.image;
     } else {
         [self.iphoneArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
         self.iphoneCategoryLabel.text = category;
@@ -60,7 +61,7 @@
         [self.iphonePriceButton setTitle:[self extractPrice] forState:UIControlStateNormal];
         self.iphoneSummaryTextView.text = self.entry.summary;
         self.iphoneSummaryTextView.editable = NO;
-        self.iphoneImageView.image = self.entry.image;
+        //self.iphoneImageView.image = self.entry.image;
     }
     
 }
@@ -182,6 +183,27 @@
     }
     
     return price;
+}
+
+-(void)loadAppImage
+{
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        // The device is an iPad running iOS 3.2 or later.
+        if (self.entry.image) {
+            self.ipadImageView.image = self.entry.image;
+        } else {
+            self.ipadImageView.image = [UIImage imageNamed:@"Placeholder.png"];
+        }
+    }
+    else {
+        // The device is an iPhone or iPod touch.
+        if (self.entry.image) {
+            self.iphoneImageView.image = self.entry.image;
+        } else {
+            self.iphoneImageView.image = [UIImage imageNamed:@"Placeholder.png"];
+        }
+    }
 }
 
 @end
