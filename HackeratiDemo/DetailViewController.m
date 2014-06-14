@@ -36,11 +36,11 @@
     
     
     UIBarButtonItem *shareBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(displayActivityControllerWithDataObject)];
-    UIBarButtonItem *favoritesBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(setAsFavorite)];
-    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:favoritesBarButton, shareBarButton, nil]];
+    self.favoritesBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(setAsFavorite)];
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:self.favoritesBarButton, shareBarButton, nil]];
     
     if ([self checkFavoriteStatus]) {
-        favoritesBarButton.enabled = NO;
+        self.favoritesBarButton.enabled = NO;
     }
     
     NSString *category = [[self.entry.category objectForKey:@"attributes"] objectForKey:@"term"];
@@ -138,7 +138,7 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.popover = [[UIPopoverController alloc] initWithContentViewController:vc];
         
-        [self.popover presentPopoverFromRect:CGRectMake(self.view.frame.size.width/2, self.view.frame.size.width/2, 100, 100) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+        [self.popover presentPopoverFromRect:CGRectMake(self.view.frame.size.width - 128, self.navigationController.navigationBar.frame.origin.y - 55, 100, 100) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
     } else {
         [self presentViewController:vc animated:YES completion:nil];
     }
@@ -161,7 +161,7 @@
             
             NSLog(@"Entry has been saved into Core Data as a favorite");
             
-            self.favoritesBarButton.enabled = NO; //TODO: NOT WORKING!!!!
+            self.favoritesBarButton.enabled = NO;
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App added!" message:@"App has been added to favorites" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alert show];
