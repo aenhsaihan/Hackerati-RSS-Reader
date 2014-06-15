@@ -15,4 +15,10 @@
 
 @property (nonatomic, strong) NSMutableArray *images;
 
+@property (nonatomic, strong) UIActivityIndicatorView *spinner;
+
+
+-(void)startSpinner;
+-(void)stopSpinner;
+
 @end

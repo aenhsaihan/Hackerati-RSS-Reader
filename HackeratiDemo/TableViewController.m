@@ -167,5 +167,16 @@
     [self.navigationController pushViewController:favoritesViewController animated:YES];
 }
 
+-(void)startSpinner
+{
+    self.spinner.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
+    [self.view addSubview:self.spinner];
+    [self.spinner startAnimating];
+}
+
+-(void)stopSpinner
+{
+    [self.spinner stopAnimating];
+}
 
 @end

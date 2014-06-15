@@ -30,6 +30,10 @@
     TableViewController *tableViewController = [[TableViewController alloc] initWithNibName:nil bundle:nil];
     [navigationController pushViewController:tableViewController animated:YES];
     
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    tableViewController.spinner = spinner;
+    [tableViewController startSpinner];
+    
     self.window.rootViewController = navigationController;
     
     
@@ -43,8 +47,10 @@
         NSError *connectionError;
         
         NSData *jsonData = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&connectionError];
+
         
         if (!connectionError) {
+            
             
             NSError *jsonError = nil;
             
@@ -61,6 +67,7 @@
                     
                     NSLog(@"Using dispatch async to get back on main thread");
                     
+                    [tableViewController.spinner stopAnimating];
                     [tableViewController.tableView reloadData];
                     tableViewController.title = [[tableViewController.dataModel.author objectForKey:@"name"] objectForKey:@"label"];
                     
@@ -71,6 +78,8 @@
         } else {
             
             dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [tableViewController.spinner stopAnimating];
                 
                 NSLog(@"Error: %@", ([connectionError localizedDescription] != nil) ? [connectionError localizedDescription] : @"Unknown Error");
                 

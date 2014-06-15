@@ -53,7 +53,7 @@
         [self.ipadPriceButton setTitle:[self extractPrice] forState:UIControlStateNormal];
         self.ipadSummaryTextView.text = self.entry.summary;
         self.ipadSummaryTextView.editable = NO;
-        //self.ipadImageView.image = self.entry.image;
+
     } else {
         [self.iphoneArtistButton setTitle:[self.entry.artist objectForKey:@"label"] forState:UIControlStateNormal];
         self.iphoneCategoryLabel.text = category;
@@ -61,7 +61,7 @@
         [self.iphonePriceButton setTitle:[self extractPrice] forState:UIControlStateNormal];
         self.iphoneSummaryTextView.text = self.entry.summary;
         self.iphoneSummaryTextView.editable = NO;
-        //self.iphoneImageView.image = self.entry.image;
+
     }
     
 }
