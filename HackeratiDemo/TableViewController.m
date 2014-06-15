@@ -8,7 +8,6 @@
 
 #import "TableViewController.h"
 #import "Entry.h"
-#import "DetailViewController.h"
 #import "FavoritesViewController.h"
 
 @interface TableViewController ()
@@ -133,22 +132,20 @@
     // Navigation logic may go here, for example:
     // Create the next view controller.
     
-    DetailViewController *detailViewController;
-    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         // The device is an iPad running iOS 3.2 or later.
-        detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController~ipad" bundle:nil];
+        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController~ipad" bundle:nil];
     }
     else {
         // The device is an iPhone or iPod touch.
-        detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController~iphone" bundle:nil];
+        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController~iphone" bundle:nil];
     }
 
     // Pass the selected object to the new view controller.
-    detailViewController.entry = [self.dataModel.entries objectAtIndex:indexPath.row];
+    self.detailViewController.entry = [self.dataModel.entries objectAtIndex:indexPath.row];
     
     // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
 -(void)pushFavoritesViewController

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DataModel.h"
+#import "DetailViewController.h"
 
 @interface TableViewController : UITableViewController
 
@@ -16,6 +17,8 @@
 @property (nonatomic, strong) NSMutableArray *images;
 
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
+
+@property (nonatomic, strong) DetailViewController *detailViewController;
 
 
 -(void)startSpinner;

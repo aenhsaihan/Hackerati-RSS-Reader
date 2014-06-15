@@ -40,6 +40,7 @@
 - (IBAction)viewArtistLink:(id)sender;
 - (IBAction)purchaseApplication:(id)sender;
 
+-(void)loadAppImage;
 
 
 
