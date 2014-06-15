@@ -58,9 +58,9 @@
             
             if (!jsonError) {
                 tableViewController.dataModel  = [[DataModel alloc] initWithDictionary:jsonDictionary withCompletionHandler:^{
+                    //CompletionHandler is called once image has been downloaded
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
-                        //Block is called once image has been downloaded
                         [tableViewController.tableView reloadData];
                         [tableViewController.detailViewController loadAppImage];
         
